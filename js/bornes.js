@@ -451,4 +451,14 @@ var bornes = [
     { "id": 447, "nom": "11 Rue Buffon Paris", "x": "48.84280304629025", "y": "2.362398887182141", "alt": "inconnue", "ville": "Paris" },
     { "id": 448, "nom": "Boulevard de L'hôpital Paris", "x": "48.83990534827534", "y": "2.3619729974026633", "alt": "inconnue", "ville": "Paris" },
     { "id": 449, "nom": "Ecole de Falck", "x": "49.22483243358401", "y": "6.636236030998355", "alt": "228", "ville": "Flack" },
+
+    { "id": 451, "nom": "94 Rue de Bercy Paris", "x": "48.83867420142927", "y": "2.3814857384049906", "alt": "inconnue", "ville": "Paris" },
+    { "id": 452, "nom": "55 Rue Sainte-Anne Paris", "x": "48.86771342717138", "y": "2.3362651621956494", "alt": "inconnue", "ville": "Paris" },
+    { "id": 454, "nom": "39 Rue du Mont-Cenis Paris", "x": "48.888764819469955", "y": "2.342123648578288", "alt": "inconnue", "ville": "Paris" },
+    { "id": 455, "nom": "43 Rue du Mont Cenis Paris", "x": "48.88945367493732", "y": "2.342782266934765", "alt": "inconnue", "ville": "Paris" },
+    { "id": 457, "nom": "105 Rue Caulaincourt Paris", "x": "48.889724651154474", "y": "2.3391394583599574", "alt": "inconnue", "ville": "Paris" },
+
+    { "id": 450, "nom": "Le Palais, Place Leonard Bernstein Paris", "x": "48.838056", "y": "2.381111", "alt":"inconnue", "ville": "Paris", "nonPrecis": "true" },
+    { "id": 453, "nom": "51 Rue du Chevalier de la Barre, 75018 Paris, France", "x": "48.8869444", "y": "2.3419444444444446", "alt": "inconnue", "ville": "Paris", "nonPrecis": "true" },
+    { "id": 456, "nom": "43 Rue du Mont Cenis, 75018 Paris, France", "x": "48.8919444", "y": "2.392777777777778", "alt": "inconnue", "ville": "Paris", "nonPrecis": "true" },
 ]   
