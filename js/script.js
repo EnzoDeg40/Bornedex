@@ -8,6 +8,8 @@ var compteurtrouvee = 0;
 
 // Lorsque qu'une borne à été découverte
 function definitDecouverteBorne(num, decouverte){
+    return;
+    
     // Change l'icone du marker
     if(decouverte == true){
         markers[num].setIcon(borneDecouverte);
@@ -29,6 +31,8 @@ function copyLinkBorne(i){
 
 
 function updateBorne(){
+    return;
+
     // Pour chaque borne
     compteurtrouvee=0;
     for(var i = 0; i < bornes.length; i++){
@@ -248,6 +252,17 @@ var borneDecouverte = L.icon({
     shadowSize: [41, 41]
 });
 
+var borneNonApprouvee = L.icon({
+    iconUrl: 'lib/leaflet/images/marker-icon-red.png',
+    iconRetinaUrl: 'lib/leaflet/images/marker-icon-red-2x.png',
+    shadowUrl: 'lib/leaflet/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41]
+});
+
 var markers = [];
 
 var i = 0
@@ -262,7 +277,14 @@ bornes.forEach(borne => {
             borneStyleWiki = "";
         }
 
-        markers[i] = L.marker([(borne.x == 0) ? i : borne.x, borne.y], { icon: borneNonDecouverte })
+        let setZIndexOffset = 0;
+        let icon = borneNonDecouverte;
+        if (borne.nonPrecis){
+            icon = borneNonApprouvee; 
+            setZIndexOffset = 1000;
+        }
+
+        markers[i] = L.marker([(borne.x == 0) ? i : borne.x, borne.y], { icon: icon, zIndexOffset: setZIndexOffset })
         .addTo(map).bindPopup(`
             <img onclick="ouvre(${i})" src="bornes/${borne.id}.jpg" alt ="${borne.nom}" ><br/>
             <p class="nom">${borne.nom}</p>
@@ -348,7 +370,7 @@ var BorneMaxId = 0;
 var BorneMinId = 0;
 bornes.forEach(borne => {
     if (borne.y!=0 && borne.alt!="inconnue"){
-        var alt = parseFloat(borne.alt.replace(",", "."));
+        const alt = parseFloat(borne.alt.replace(",", "."));
         if(alt == NaN){
             return;
         }
@@ -408,11 +430,11 @@ villes.sort(function(a, b){
     return b[1] - a[1];
 });
 
-let classment = 1;
+/*let classment = 1;
 villes.forEach(ville => {
     if(ville[1] > 1){
         console.log(`#${classment} ${ville[0]} (${ville[1]} bornes)`);
         classment += 1;
     }
-});
+});*/
 //console.log(villes);
